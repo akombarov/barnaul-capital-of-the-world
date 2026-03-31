@@ -107,41 +107,39 @@
       transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
     }
 
-    .tree-line {
+    .tree-group {
       position: absolute;
-      left: -8vw;
-      width: 116vw;
+      left: -6vw;
+      width: 112vw;
       transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
       will-change: transform;
-      background-repeat: repeat-x;
-      background-position: left bottom;
       pointer-events: none;
     }
 
-    .tree-line-mid {
-      bottom: 22vh;
-      height: 9vh;
-      opacity: 0.48;
-      background-size: 78px 100%;
-      background-image:
-        linear-gradient(to top, rgba(46, 64, 82, 0.28), transparent 18%),
-        linear-gradient(63deg, transparent 47%, rgba(58, 77, 97, 0.9) 48%, transparent 49%),
-        linear-gradient(-63deg, transparent 47%, rgba(58, 77, 97, 0.9) 48%, transparent 49%),
-        linear-gradient(70deg, transparent 56%, rgba(90, 114, 138, 0.72) 57%, transparent 58%),
-        linear-gradient(-70deg, transparent 56%, rgba(90, 114, 138, 0.72) 57%, transparent 58%);
+    .tree-group img {
+      position: absolute;
+      bottom: 0;
+      width: auto;
+      transform-origin: center bottom;
     }
 
-    .tree-line-front {
-      bottom: 8vh;
-      height: 13vh;
-      opacity: 0.92;
-      background-size: 58px 100%;
-      background-image:
-        linear-gradient(to top, rgba(26, 36, 48, 0.46), transparent 16%),
-        linear-gradient(64deg, transparent 46%, rgba(24, 34, 47, 0.98) 47%, transparent 48%),
-        linear-gradient(-64deg, transparent 46%, rgba(24, 34, 47, 0.98) 47%, transparent 48%),
-        linear-gradient(72deg, transparent 58%, rgba(41, 56, 72, 0.9) 59%, transparent 60%),
-        linear-gradient(-72deg, transparent 58%, rgba(41, 56, 72, 0.9) 59%, transparent 60%);
+    .tree-group-mid {
+      bottom: 21vh;
+      height: 10vh;
+      opacity: 0.42;
+    }
+
+    .tree-group-mid img {
+      filter: drop-shadow(0 0 6px rgba(41, 55, 73, 0.08));
+    }
+
+    .tree-group-front {
+      bottom: 7vh;
+      height: 15vh;
+      opacity: 0.88;
+    }
+
+    .tree-group-front img {
       filter: drop-shadow(0 0 8px rgba(22, 30, 41, 0.16));
     }
 
@@ -349,16 +347,14 @@
         bottom: 11vh;
       }
 
-      .tree-line-mid {
-        bottom: 16vh;
-        height: 6vh;
-        background-size: 54px 100%;
+      .tree-group-mid {
+        bottom: 15vh;
+        height: 7vh;
       }
 
-      .tree-line-front {
+      .tree-group-front {
         bottom: 6vh;
-        height: 9vh;
-        background-size: 42px 100%;
+        height: 10vh;
       }
 
       .lead,
@@ -378,10 +374,32 @@
     <div class="mountains">
       <div class="mountain-layer mountain-back" data-depth="10"></div>
       <div class="mountain-layer mountain-mid" data-depth="16"></div>
-      <div class="tree-line tree-line-mid" data-depth="20"></div>
+      <div class="tree-group tree-group-mid" data-depth="20" aria-hidden="true">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 2%; height: 64%; opacity: 0.78; transform: scaleX(1);">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 11%; height: 98%; opacity: 0.9; transform: scaleX(-1);">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 24%; height: 72%; opacity: 0.74;">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 34%; height: 82%; opacity: 0.82;">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 47%; height: 66%; opacity: 0.76; transform: scaleX(-1);">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 56%; height: 100%; opacity: 0.9;">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 68%; height: 70%; opacity: 0.72;">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 79%; height: 86%; opacity: 0.84; transform: scaleX(-1);">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 92%; height: 62%; opacity: 0.74;">
+      </div>
       <div class="fog" data-depth="22"></div>
       <div class="mountain-layer mountain-front" data-depth="28"></div>
-      <div class="tree-line tree-line-front" data-depth="32"></div>
+      <div class="tree-group tree-group-front" data-depth="32" aria-hidden="true">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 1%; height: 92%; opacity: 0.95;">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 9%; height: 72%; opacity: 0.88; transform: scaleX(-1);">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 17%; height: 100%; opacity: 0.98; transform: scaleX(-1);">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 28%; height: 78%; opacity: 0.9;">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 37%; height: 88%; opacity: 0.92;">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 49%; height: 70%; opacity: 0.88; transform: scaleX(-1);">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 58%; height: 100%; opacity: 0.98;">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 69%; height: 74%; opacity: 0.9;">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 78%; height: 90%; opacity: 0.94; transform: scaleX(-1);">
+        <img src="assets/trees/conifer-icon.svg" alt="" style="left: 89%; height: 82%; opacity: 0.9;">
+        <img src="assets/trees/simple-pine.svg" alt="" style="left: 97%; height: 76%; opacity: 0.9;">
+      </div>
     </div>
     <div class="orb orb-one" data-depth="28"></div>
     <div class="orb orb-two" data-depth="42"></div>
