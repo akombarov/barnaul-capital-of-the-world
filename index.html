@@ -6,12 +6,12 @@
   <title>Барнаул - столица мира</title>
   <style>
     :root {
-      --bg: #8f3c2f;
-      --paper: rgba(132, 52, 38, 0.9);
-      --text: #fff1e8;
-      --accent: #ffb08a;
-      --accent-dark: #ffd3bd;
-      --shadow: rgba(37, 10, 6, 0.28);
+      --bg: #f3edf7;
+      --paper: rgba(255, 255, 255, 0.78);
+      --text: #43384a;
+      --accent: #c892b6;
+      --accent-dark: #9b7ea8;
+      --shadow: rgba(113, 92, 124, 0.18);
     }
 
     * {
@@ -24,8 +24,10 @@
       font-family: "Georgia", "Times New Roman", serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top, rgba(255, 196, 160, 0.28), transparent 36%),
-        linear-gradient(160deg, #6f241a 0%, #8f3c2f 45%, #b5523f 100%);
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.92), transparent 34%),
+        radial-gradient(circle at 20% 20%, rgba(206, 221, 255, 0.48), transparent 30%),
+        radial-gradient(circle at 80% 10%, rgba(255, 214, 235, 0.42), transparent 28%),
+        linear-gradient(160deg, #ece5f2 0%, #f7f3fb 48%, #e6eef8 100%);
       display: grid;
       place-items: center;
       padding: 24px;
@@ -34,7 +36,7 @@
     .page {
       width: min(900px, 100%);
       background: var(--paper);
-      border: 1px solid rgba(255, 211, 189, 0.16);
+      border: 1px solid rgba(200, 171, 214, 0.32);
       border-radius: 28px;
       padding: 48px 32px;
       box-shadow: 0 24px 60px var(--shadow);
@@ -74,10 +76,10 @@
     }
 
     .card {
-      background: rgba(255, 230, 218, 0.12);
+      background: rgba(255, 255, 255, 0.46);
       border-radius: 20px;
       padding: 22px;
-      border: 1px solid rgba(255, 211, 189, 0.14);
+      border: 1px solid rgba(200, 171, 214, 0.26);
     }
 
     .card h2 {
@@ -94,7 +96,7 @@
       margin-top: 34px;
       padding: 24px;
       border-left: 5px solid var(--accent);
-      background: rgba(255, 176, 138, 0.12);
+      background: rgba(232, 205, 233, 0.34);
       border-radius: 18px;
       font-size: 1.15rem;
       line-height: 1.7;
@@ -103,7 +105,7 @@
     .footer {
       margin-top: 26px;
       font-size: 0.95rem;
-      color: rgba(255, 241, 232, 0.78);
+      color: rgba(67, 56, 74, 0.72);
     }
 
     @media (max-width: 640px) {
