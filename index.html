@@ -6,12 +6,12 @@
   <title>Барнаул - столица мира</title>
   <style>
     :root {
-      --bg: #f3edf7;
-      --paper: rgba(255, 255, 255, 0.78);
-      --text: #43384a;
-      --accent: #c892b6;
-      --accent-dark: #9b7ea8;
-      --shadow: rgba(113, 92, 124, 0.18);
+      --bg: #dbe6f3;
+      --paper: rgba(255, 255, 255, 0.8);
+      --text: #2c3441;
+      --accent: #c97b73;
+      --accent-dark: #7b6b8c;
+      --shadow: rgba(58, 71, 96, 0.2);
     }
 
     * {
@@ -24,10 +24,10 @@
       font-family: "Georgia", "Times New Roman", serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.92), transparent 34%),
-        radial-gradient(circle at 20% 20%, rgba(206, 221, 255, 0.48), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(255, 214, 235, 0.42), transparent 28%),
-        linear-gradient(160deg, #ece5f2 0%, #f7f3fb 48%, #e6eef8 100%);
+        radial-gradient(circle at top, rgba(255, 248, 236, 0.92), transparent 32%),
+        radial-gradient(circle at 16% 18%, rgba(255, 216, 189, 0.46), transparent 28%),
+        radial-gradient(circle at 82% 8%, rgba(184, 215, 255, 0.42), transparent 28%),
+        linear-gradient(180deg, #b9d1ea 0%, #dfe9f4 34%, #f2e5db 100%);
       display: grid;
       place-items: center;
       padding: 24px;
@@ -41,6 +41,70 @@
       inset: 0;
       overflow: hidden;
       pointer-events: none;
+    }
+
+    .mountains {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .mountain-layer {
+      position: absolute;
+      left: -10vw;
+      width: 120vw;
+      bottom: 0;
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-size: cover;
+      transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
+      will-change: transform;
+    }
+
+    .mountain-back {
+      height: 46vh;
+      opacity: 0.48;
+      background-image: linear-gradient(to top, rgba(92, 121, 148, 0.7), rgba(92, 121, 148, 0.08));
+      clip-path: polygon(0 100%, 10% 72%, 18% 82%, 30% 48%, 41% 70%, 52% 34%, 63% 66%, 75% 44%, 88% 74%, 100% 56%, 100% 100%);
+      background-color: rgba(93, 118, 144, 0.72);
+    }
+
+    .mountain-mid {
+      height: 38vh;
+      opacity: 0.86;
+      clip-path: polygon(0 100%, 0 86%, 12% 58%, 22% 76%, 34% 36%, 44% 58%, 54% 28%, 66% 70%, 79% 38%, 89% 60%, 100% 44%, 100% 100%);
+      background:
+        linear-gradient(to top, rgba(74, 92, 117, 0.96), rgba(115, 141, 171, 0.72));
+    }
+
+    .mountain-front {
+      height: 29vh;
+      opacity: 0.96;
+      clip-path: polygon(0 100%, 0 92%, 9% 80%, 19% 88%, 30% 62%, 39% 82%, 50% 50%, 60% 72%, 71% 46%, 82% 78%, 92% 56%, 100% 70%, 100% 100%);
+      background:
+        linear-gradient(to top, rgba(43, 56, 73, 0.98), rgba(70, 86, 108, 0.9));
+    }
+
+    .mountain-front::after,
+    .mountain-mid::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.16), transparent);
+      mix-blend-mode: screen;
+      opacity: 0.32;
+    }
+
+    .fog {
+      position: absolute;
+      left: -10vw;
+      bottom: 16vh;
+      width: 120vw;
+      height: 18vh;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 247, 239, 0.7), rgba(255, 247, 239, 0.08) 66%, transparent 76%);
+      filter: blur(28px);
+      opacity: 0.72;
+      transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
     }
 
     .orb {
@@ -59,7 +123,7 @@
       height: 280px;
       top: 6%;
       left: 8%;
-      background: radial-gradient(circle, rgba(255, 187, 225, 0.9), rgba(255, 187, 225, 0.1) 68%, transparent 74%);
+      background: radial-gradient(circle, rgba(255, 190, 162, 0.9), rgba(255, 190, 162, 0.1) 68%, transparent 74%);
       animation-duration: 18s;
     }
 
@@ -68,7 +132,7 @@
       height: 360px;
       right: 6%;
       top: 12%;
-      background: radial-gradient(circle, rgba(180, 226, 255, 0.85), rgba(180, 226, 255, 0.14) 64%, transparent 74%);
+      background: radial-gradient(circle, rgba(182, 219, 255, 0.85), rgba(182, 219, 255, 0.14) 64%, transparent 74%);
       animation-duration: 22s;
       animation-delay: -4s;
     }
@@ -78,7 +142,7 @@
       height: 320px;
       left: 18%;
       bottom: -4%;
-      background: radial-gradient(circle, rgba(222, 196, 255, 0.8), rgba(222, 196, 255, 0.12) 62%, transparent 74%);
+      background: radial-gradient(circle, rgba(190, 197, 255, 0.8), rgba(190, 197, 255, 0.12) 62%, transparent 74%);
       animation-duration: 20s;
       animation-delay: -9s;
     }
@@ -88,7 +152,7 @@
       height: 240px;
       right: 14%;
       bottom: 10%;
-      background: radial-gradient(circle, rgba(255, 239, 183, 0.7), rgba(255, 239, 183, 0.08) 62%, transparent 74%);
+      background: radial-gradient(circle, rgba(255, 227, 171, 0.72), rgba(255, 227, 171, 0.08) 62%, transparent 74%);
       animation-duration: 24s;
       animation-delay: -6s;
     }
@@ -96,7 +160,7 @@
     .page {
       width: min(900px, 100%);
       background: var(--paper);
-      border: 1px solid rgba(200, 171, 214, 0.32);
+      border: 1px solid rgba(167, 149, 176, 0.28);
       border-radius: 28px;
       padding: 48px 32px;
       box-shadow: 0 24px 60px var(--shadow);
@@ -109,7 +173,7 @@
 
     .eyebrow {
       margin: 0 0 12px;
-      color: var(--accent-dark);
+      color: rgba(92, 79, 116, 0.92);
       text-transform: uppercase;
       letter-spacing: 0.18em;
       font-size: 0.8rem;
@@ -140,10 +204,10 @@
     }
 
     .card {
-      background: rgba(255, 255, 255, 0.46);
+      background: rgba(255, 255, 255, 0.5);
       border-radius: 20px;
       padding: 22px;
-      border: 1px solid rgba(200, 171, 214, 0.26);
+      border: 1px solid rgba(157, 147, 172, 0.22);
       transform: translateY(0);
       transition: transform 220ms ease, background 220ms ease, border-color 220ms ease;
       animation: rise 1s ease-out both;
@@ -160,7 +224,7 @@
     .card:hover {
       transform: translateY(-6px);
       background: rgba(255, 255, 255, 0.58);
-      border-color: rgba(200, 146, 182, 0.36);
+      border-color: rgba(201, 123, 115, 0.36);
     }
 
     .card h2 {
@@ -177,7 +241,7 @@
       margin-top: 34px;
       padding: 24px;
       border-left: 5px solid var(--accent);
-      background: rgba(232, 205, 233, 0.34);
+      background: rgba(243, 222, 212, 0.4);
       border-radius: 18px;
       font-size: 1.15rem;
       line-height: 1.7;
@@ -218,7 +282,7 @@
         box-shadow: 0 0 0 rgba(200, 146, 182, 0);
       }
       50% {
-        box-shadow: 0 0 28px rgba(200, 146, 182, 0.14);
+        box-shadow: 0 0 28px rgba(201, 123, 115, 0.14);
       }
       100% {
         box-shadow: 0 0 0 rgba(200, 146, 182, 0);
@@ -229,6 +293,22 @@
       .page {
         padding: 32px 20px;
         border-radius: 22px;
+      }
+
+      .mountain-back {
+        height: 34vh;
+      }
+
+      .mountain-mid {
+        height: 28vh;
+      }
+
+      .mountain-front {
+        height: 22vh;
+      }
+
+      .fog {
+        bottom: 11vh;
       }
 
       .lead,
@@ -245,6 +325,12 @@
 </head>
 <body>
   <div class="aurora" aria-hidden="true">
+    <div class="mountains">
+      <div class="mountain-layer mountain-back" data-depth="10"></div>
+      <div class="mountain-layer mountain-mid" data-depth="16"></div>
+      <div class="fog" data-depth="22"></div>
+      <div class="mountain-layer mountain-front" data-depth="28"></div>
+    </div>
     <div class="orb orb-one" data-depth="28"></div>
     <div class="orb orb-two" data-depth="42"></div>
     <div class="orb orb-three" data-depth="20"></div>
@@ -284,20 +370,20 @@
     </p>
   </main>
   <script>
-    const orbs = document.querySelectorAll(".orb");
+    const parallaxItems = document.querySelectorAll("[data-depth]");
 
-    const moveOrbs = (event) => {
+    const moveScene = (event) => {
       const x = (event.clientX / window.innerWidth - 0.5) * 2;
       const y = (event.clientY / window.innerHeight - 0.5) * 2;
 
-      orbs.forEach((orb) => {
-        const depth = Number(orb.dataset.depth || 20);
-        orb.style.setProperty("--shift-x", `${x * depth}px`);
-        orb.style.setProperty("--shift-y", `${y * depth}px`);
+      parallaxItems.forEach((item) => {
+        const depth = Number(item.dataset.depth || 20);
+        item.style.setProperty("--shift-x", `${x * depth}px`);
+        item.style.setProperty("--shift-y", `${y * depth}px`);
       });
     };
 
-    window.addEventListener("mousemove", moveOrbs);
+    window.addEventListener("mousemove", moveScene);
   </script>
 </body>
 </html>
