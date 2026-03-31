@@ -107,6 +107,44 @@
       transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
     }
 
+    .tree-line {
+      position: absolute;
+      left: -8vw;
+      width: 116vw;
+      transform: translate3d(var(--shift-x, 0), var(--shift-y, 0), 0);
+      will-change: transform;
+      background-repeat: repeat-x;
+      background-position: left bottom;
+      pointer-events: none;
+    }
+
+    .tree-line-mid {
+      bottom: 22vh;
+      height: 9vh;
+      opacity: 0.48;
+      background-size: 78px 100%;
+      background-image:
+        linear-gradient(to top, rgba(46, 64, 82, 0.28), transparent 18%),
+        linear-gradient(63deg, transparent 47%, rgba(58, 77, 97, 0.9) 48%, transparent 49%),
+        linear-gradient(-63deg, transparent 47%, rgba(58, 77, 97, 0.9) 48%, transparent 49%),
+        linear-gradient(70deg, transparent 56%, rgba(90, 114, 138, 0.72) 57%, transparent 58%),
+        linear-gradient(-70deg, transparent 56%, rgba(90, 114, 138, 0.72) 57%, transparent 58%);
+    }
+
+    .tree-line-front {
+      bottom: 8vh;
+      height: 13vh;
+      opacity: 0.92;
+      background-size: 58px 100%;
+      background-image:
+        linear-gradient(to top, rgba(26, 36, 48, 0.46), transparent 16%),
+        linear-gradient(64deg, transparent 46%, rgba(24, 34, 47, 0.98) 47%, transparent 48%),
+        linear-gradient(-64deg, transparent 46%, rgba(24, 34, 47, 0.98) 47%, transparent 48%),
+        linear-gradient(72deg, transparent 58%, rgba(41, 56, 72, 0.9) 59%, transparent 60%),
+        linear-gradient(-72deg, transparent 58%, rgba(41, 56, 72, 0.9) 59%, transparent 60%);
+      filter: drop-shadow(0 0 8px rgba(22, 30, 41, 0.16));
+    }
+
     .orb {
       position: absolute;
       border-radius: 50%;
@@ -311,6 +349,18 @@
         bottom: 11vh;
       }
 
+      .tree-line-mid {
+        bottom: 16vh;
+        height: 6vh;
+        background-size: 54px 100%;
+      }
+
+      .tree-line-front {
+        bottom: 6vh;
+        height: 9vh;
+        background-size: 42px 100%;
+      }
+
       .lead,
       .quote {
         font-size: 1.05rem;
@@ -328,8 +378,10 @@
     <div class="mountains">
       <div class="mountain-layer mountain-back" data-depth="10"></div>
       <div class="mountain-layer mountain-mid" data-depth="16"></div>
+      <div class="tree-line tree-line-mid" data-depth="20"></div>
       <div class="fog" data-depth="22"></div>
       <div class="mountain-layer mountain-front" data-depth="28"></div>
+      <div class="tree-line tree-line-front" data-depth="32"></div>
     </div>
     <div class="orb orb-one" data-depth="28"></div>
     <div class="orb orb-two" data-depth="42"></div>
